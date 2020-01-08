@@ -9,11 +9,8 @@ import rod.father.spring5webapp.repositories.BookRepository;
 @Controller
 public class BookController {
 	
-	
+
 	private BookRepository bookRepo;
-	
-	
-	
 	
 	public BookController(BookRepository bookRepo) {
 		this.bookRepo = bookRepo;
@@ -23,7 +20,6 @@ public class BookController {
 	public String getBooks(Model model) {
 		
 		model.addAttribute("books", bookRepo.findAll());
-		
 		return "books";
 	}
 
